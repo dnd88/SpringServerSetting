@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="User">
+	
+	<resultMap type="UserVO" id="userResultMap">
+		<result property="userId" column="user_id" jdbcType="VARCHAR"/>
+		<result property="userPassword" column="user_password" jdbcType="VARCHAR"/>
+		<result property="userName" column="user_name" jdbcType="VARCHAR"/>
+		<result property="userNumber" column="user_number" jdbcType="NUMERIC"/>
+		<result property="userRole" column="user_role" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<insert id="insertUser" parameterType="UserVO">
+		INSERT INTO 
+			USER_TB
+		VALUES(
+			#{userId},
+			#{userPassword},
+			#{userName},
+			#{userNumber},
+			#{userRole}
+		)
+	</insert>
+	
+	
+
+</mapper>
